@@ -7,12 +7,13 @@
 - Node.js 18+ and npm
 - Python 3.10+
 - Configured .env file at project root
+- InstaGeo : install with th efollowing command `pip install git+https://github.com/instadeepai/InstaGeo-E2E-Geospatial-ML`
 
 ### Commands
 - Full build : make
 - Rebuild and restart : make re
 - Full cleanup : make prune
-- Lots of other command in the makefile
+- Lots of other commands in the makefile
 
 ### Access Ports:
 - Frontend: http://localhost:8081 (dev)
