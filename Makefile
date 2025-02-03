@@ -17,6 +17,7 @@ all: build up
 
 build: # prepare_directories
 	@echo "$(YELLOW)Building Docker images...$(NC)"
+	cd ./srcs/vite/app && npm run build && cd - 
 	docker-compose -f $(COMPOSE_FILE) build
 
 up:
@@ -68,6 +69,10 @@ shellFlask:
 shellVite:
 	@echo "$(YELLOW)Accessing the shell of the vite container...$(NC)"
 	docker-compose -f $(COMPOSE_FILE) exec vite sh
+
+shellNginx:
+	@echo "$(YELLOW)Accessing the shell of the nginx container...$(NC)"
+	docker-compose -f $(COMPOSE_FILE) exec nginx sh
 
 
 .PHONY: all prepare_directories build up down stop restart re logs status remove prune shellPostgreSQL shellDjango shellNginx

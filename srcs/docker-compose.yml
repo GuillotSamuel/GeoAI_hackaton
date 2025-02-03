@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-# --- FLASK --- #
+# --- FLASK (+ Gunicorn) --- #
   flask:
     container_name: flask
     build:
@@ -13,24 +13,40 @@ services:
       - ../.env
     # depends_on:
     #   - db
-    # volumes:
     networks:
       - geoAI_network
     restart: always
-# --- VITE --- #
-  # vite:
-  #   container_name: vite
-  #   build: ./vite
-  #   ports:
-  #     - "8081:8081"
-  #   env_file:
-  #     - ../.env
-  #   # depends_on:
-  #   #   - flask
-  #   # volumes:
-  #   networks:
-  #     - geoAI_network
-  #   restart: always
+
+# --- VITE (React + Vanilla JS) --- #
+  vite:
+    container_name: vite
+    build: 
+      context: ./vite
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    env_file:
+      - ../.env
+    depends_on:
+      - flask
+    networks:
+      - geoAI_network
+    restart: always
+
+# --- NGINX --- #
+  nginx:
+    container_name: nginx
+    image: nginx
+    ports:
+      - "8082:80" # HTTP
+      # - "443:443" # HTTPS
+    volumes:
+      - ./vite/app/dist:/usr/share/nginx/html
+    networks:
+      - geoAI_network
+    depends_on:
+      - vite
+    restart: always
 
 # --- VOLUMES --- #
 # volumes:
