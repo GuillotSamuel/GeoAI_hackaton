@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+# --- FLASK --- #
+  flask:
+    container_name: flask
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - ../.env
+    # depends_on:
+    #   - db
+    # volumes:
+    networks:
+      - geoAI_network
+    restart: always
+# --- VITE --- #
+  # vite:
+  #   container_name: vite
+  #   build: ./vite
+  #   ports:
+  #     - "8081:8081"
+  #   env_file:
+  #     - ../.env
+  #   # depends_on:
+  #   #   - flask
+  #   # volumes:
+  #   networks:
+  #     - geoAI_network
+  #   restart: always
+
+# --- VOLUMES --- #
+# volumes:
+
+# --- NETWORKS --- #
+networks:
+  geoAI_network:
+    driver: bridge
