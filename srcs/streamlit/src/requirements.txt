@@ -1,0 +1,6 @@
+streamlit
+datashader
+matplotlib
+plotly
+rasterio
+pyproj

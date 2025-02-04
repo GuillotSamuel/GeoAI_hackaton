@@ -17,7 +17,7 @@ all: build up
 
 build: # prepare_directories
 	@echo "$(YELLOW)Building Docker images...$(NC)"
-	cd ./srcs/vite/app && npm run build && cd - 
+#	cd ./srcs/vite/app && npm run build && cd - 
 	docker-compose -f $(COMPOSE_FILE) build
 
 up:

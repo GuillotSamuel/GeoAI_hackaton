@@ -1,6 +1,21 @@
 version: "3.8"
 
 services:
+
+# --- STREAMLIT --- #
+  streamlit:
+    container_name: streamlit
+    build:
+      context: ./streamlit
+      dockerfile: Dockerfile
+    ports:
+      - "8079:8501"
+    env_file:
+      - ../.env
+    networks:
+      - geoAI_network
+    restart: always
+
 # --- FLASK (+ Gunicorn) --- #
   flask:
     container_name: flask
@@ -11,8 +26,8 @@ services:
       - "8080:8080"
     env_file:
       - ../.env
-    # depends_on:
-    #   - db
+    depends_on:
+      - streamlit
     networks:
       - geoAI_network
     restart: always
@@ -47,6 +62,8 @@ services:
     depends_on:
       - vite
     restart: always
+
+
 
 # --- VOLUMES --- #
 # volumes:
