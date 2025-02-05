@@ -1,14 +1,15 @@
 import React from 'react';
 import './Performances.css';
+import satelite2 from './assets/satelite2.png';
 
 const Performances = () => {
   return (
     <section className="performances">
       <div id="performance_container">
-        <div className="performance_content">
-          <img href=""></img>
+        <div className="performance_content satelite_container">
+          <img src={satelite2} id='satelite2'></img>
         </div>
-        <div className="performance_content">
+        <div className="performance_content perf_container">
           <div className="perfNumber">70% Accuracy Model</div>
           <div className="perfPresent">
             <div className="perfDesc">

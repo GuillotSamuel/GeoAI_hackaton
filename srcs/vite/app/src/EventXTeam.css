@@ -1,6 +1,38 @@
 .eventXTeam {
-    background-color: #020617;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, hsl(39, 100%, 91%), #dfb864); /* Dégradé principal */
+  overflow: hidden;
 }
+
+.eventXTeam::before,
+.eventXTeam::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Forme arrondie pour simuler une tâche */
+  background: radial-gradient(circle, rgba(255, 253, 250, 0.4), transparent);
+  filter: blur(30px); /* Flou pour un effet plus doux */
+  animation: move 8s infinite alternate;
+}
+
+.eventXTeam::before {
+  top: 10%;
+  left: 20%;
+}
+
+.eventXTeam::after {
+  bottom: 15%;
+  right: 25%;
+}
+
+@keyframes move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, 30px); }
+}
+
 
 #eventXTeam_container {
     display: flex;
@@ -33,6 +65,7 @@
     text-align: center;
     font-weight: 500;
     font-size: 150px;
+    color: #362f20;
 }
 
 #team_container {
@@ -62,6 +95,8 @@
     font-size: 14px;
     width: 8vw;
     text-align: left;
+    color: #4d422d;
+    font-weight: 500;
   }
 
   .heavy {
@@ -69,3 +104,18 @@
     font-size: 16px;
   }
   
+  #projectRepo {
+    position: absolute;
+    color: #4d422d;
+    z-index: 9999;
+    bottom: 0;
+    left: 45%;
+    font-size: 18px;
+    text-decoration:underline;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+#projectRepo:hover {
+    color: #775b26;
+}

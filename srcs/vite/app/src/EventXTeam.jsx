@@ -39,6 +39,9 @@ const EventXTeam = () => {
           </div>
         </div>
       </div>
+      <a href="https://github.com/GuillotSamuel/GeoAI_hackaton" id="projectRepo">
+        <i class="fab fa-github"></i> Project Repository
+      </a>
     </section>
   );
 };
