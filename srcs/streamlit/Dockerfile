@@ -4,6 +4,9 @@ WORKDIR /app
 
 # Installer les dépendances système pour datashader
 RUN apt-get update && apt-get install -y \
+    gdal-bin \
+    libgdal-dev \
+    libproj-dev \
     libgl1-mesa-glx \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*

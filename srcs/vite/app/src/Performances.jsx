@@ -19,7 +19,6 @@ const Performances = () => {
                 <li>Retrieves high-resolution satellite images for accurate geospatial analysis.</li>
                 <li>Optimized for real-time data acquisition and analysis.</li>
                 <li>Scalable architecture for large-scale geographical applications.</li>
-                <li>Tech stack to be finalized, currently considering frameworks such as <strong>[Insert Framework/Tool Here]</strong> for <strong>[Insert Purpose]</strong>.</li>
               </ul>
             </div>
             <div className="perfDesc">

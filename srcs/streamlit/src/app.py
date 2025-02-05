@@ -25,13 +25,19 @@ def generate_map(
     try:
         if not directory or not Path(directory).is_dir():
             raise ValueError("Invalid directory path.")
+        
+        # print(f"Directory: {directory}")
 
         prediction_tiles = glob.glob(os.path.join(directory, f"{year}/{month}/*.tif"))
+        # print(os.path.join(directory, f"{year}/{month}/*.tif"))
+        # print(f"Found tiles: {prediction_tiles}")
+
         tiles_to_consider = [
             tile
             for tile in prediction_tiles
             if os.path.basename(tile).split("_")[1].strip("T") in country_tiles
         ]
+        print(f"Tiles to consider: {tiles_to_consider}")
 
         if not tiles_to_consider:
             raise FileNotFoundError(
@@ -51,7 +57,6 @@ def main() -> None:
 
     st.sidebar.subheader(
         "This application enables the visualisation of GeoTIFF files on an interactive map.",
-        divider="rainbow",
     )
     st.sidebar.header("Settings")
     with open(
@@ -64,10 +69,10 @@ def main() -> None:
         #     "GeoTiff Directory:",
         #     help="Write the path to the directory containing your GeoTIFF files",
         # )
-        # current_file_path = os.path.abspath(__file__)
-        # current_dir = os.path.dirname(current_file_path)
-        # directory = os.path.join(current_dir, 'predictions')
-        directory ="~/predictions"
+        current_file_path = os.path.abspath(__file__)
+        current_dir = os.path.dirname(current_file_path)
+        directory = os.path.join(current_dir, 'predictions')
+        # directory ="predictions"
         country_code = st.sidebar.selectbox(
             "ISO 3166-1 Alpha-2 Country Code:",
             options=list(countries_to_tiles_map.keys()),

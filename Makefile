@@ -74,8 +74,9 @@ shellNginx:
 	@echo "$(YELLOW)Accessing the shell of the nginx container...$(NC)"
 	docker-compose -f $(COMPOSE_FILE) exec nginx sh
 
-shellStrealit:
+shellStreamlit:
 	@echo "$(YELLOW)Accessing the shell of the streamlit container...$(NC)"
 	docker-compose -f $(COMPOSE_FILE) exec streamlit sh
 
 
+.PHONY: all prepare_directories build up down stop restart re logs status remove prune shellStreamlit shellNginx shellVite shellFlask

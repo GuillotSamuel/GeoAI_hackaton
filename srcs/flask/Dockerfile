@@ -1,11 +1,6 @@
 FROM python:3-alpine3.15
 
-RUN pip install --no-cache-dir virtualenv && \
-    apk --no-cache update && apk --no-cache upgrade
-
-RUN python -m venv /venv
-
-ENV PATH="/venv/bin:$PATH"
+RUN apk --no-cache update && apk --no-cache upgrade
 
 WORKDIR /app
 COPY ./src /app
