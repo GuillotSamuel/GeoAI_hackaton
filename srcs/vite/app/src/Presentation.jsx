@@ -26,7 +26,7 @@ const Presentation = () => {
             <div className="intro">
               Instageo cutting-edge early warning AI model revolutionizes desert locust control. Using AI and satellite data, it predicts breeding hotspots across continents, empowering rapid action to protect agriculture and global food security.
             </div>
-            <button className="goToModel" id="toggleButton" onClick={handleToggleModel}>Use the Model</button>
+            <button className="goToModel" id="toggleButton" onClick={handleToggleModel}>Use AI Model</button>
           </div>
         </div>
       </div>

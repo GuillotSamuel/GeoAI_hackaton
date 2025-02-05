@@ -82,13 +82,13 @@
     padding: 15px;
     border-radius: 40px;
     border: none;
-    background-color: rgba(51, 51, 51, 0.295); /* couleur blanche semi-transparente */
+    background-color: #eba91c6b; /* couleur blanche semi-transparente */
     backdrop-filter: blur(10px); /* flou du fond derrière l'élément */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* légère ombre pour un effet de profondeur */
 }
 .goToModel:hover {
     border: none;
-    background-color: rgba(51, 51, 51, 0.495); /* couleur blanche semi-transparente */
+    background-color: #d497126b; /* couleur blanche semi-transparente */
 }
 
 #background1 {
@@ -101,7 +101,7 @@
 }
 
 .glassmorphism {
-    background-color: rgba(53, 54, 58, 0.342); /* couleur blanche semi-transparente */
+    background-color: rgba(58, 55, 53, 0.342); /* couleur blanche semi-transparente */
     border-radius: 15px; /* coins arrondis */
     backdrop-filter: blur(10px); /* flou du fond derrière l'élément */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* légère ombre pour un effet de profondeur */
