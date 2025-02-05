@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -12,7 +10,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #474747aa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -39,4 +37,41 @@
 
 .read-the-docs {
   color: #888;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+}
+
+.scroll-buttons {
+  position: fixed;
+  right: 33px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.scroll-btn {
+  background-color: transparent;
+  color: f0d3b2;
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 30px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.scroll-btn:hover {
+  box-shadow: none;
+  color: #c79b6a
+}
+
+.up-btn {
 }

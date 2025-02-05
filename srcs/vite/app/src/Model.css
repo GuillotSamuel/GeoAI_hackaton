@@ -1,0 +1,32 @@
+#model {
+    position: fixed;
+    width: 95vw;
+    height: 95vh;
+    top: 2vh;
+    left: 2.5vw;
+    z-index: 100;
+    border: 2px solid #ddd7ccab;
+    box-shadow: 0px 4px 40px #c79c6a59;
+    border-radius: 30px;
+}
+
+#model button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 22px;
+}
+
+iframe {
+    border: none;
+    border-radius: 22px;
+  }
+
+  #closeModelButton {
+    background-color: #16130d;
+    color: #f0d3b2;
+  }
+
+  #closeModelButton:hover {
+    color: #c79b6a;
+  }
